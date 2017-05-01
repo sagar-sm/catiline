@@ -25,7 +25,7 @@ function initBrowser(catiline){
 
 if(typeof define === 'function'){
 	define(function(require){
-		catiline.SHIM_WORKER_PATH=require.toUrl('./catiline.js');
+		catiline.SHIM_WORKER_PATH=require.resolve('./catiline.js');
 		return catiline;
 	});
 }else if(typeof module === 'undefined' || !('exports' in module)){

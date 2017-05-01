@@ -156,9 +156,7 @@ catiline.makeWorker = function (strings, codeword){
 };
 
 catiline.makeUrl = function (fileName) {
-	const link = document.createElement('link');
-	link.href = fileName;
-	return link.href;
+	return location.origin + '/' + fileName;
 };
 
 function stringifyObject(obj){

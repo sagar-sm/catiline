@@ -1,4 +1,4 @@
-/*! catiline 2.9.3 2013-10-25*/
+/*! catiline 2.9.3 2017-05-01*/
 /*!©2013 Calvin Metcalf @license MIT https://github.com/calvinmetcalf/catiline */
 if (typeof document === 'undefined') {
 	self._noTransferable=true;
@@ -369,9 +369,7 @@ catiline.makeWorker = function (strings, codeword){
 };
 
 catiline.makeUrl = function (fileName) {
-	var link = document.createElement('link');
-	link.href = fileName;
-	return link.href;
+	return location.origin + '/' + fileName;
 };
 
 function stringifyObject(obj){
@@ -942,7 +940,7 @@ function initBrowser(catiline){
 
 if(typeof define === 'function'){
 	define(function(require){
-		catiline.SHIM_WORKER_PATH=require.toUrl('./catiline.js');
+		catiline.SHIM_WORKER_PATH=require.resolve('./catiline.js');
 		return catiline;
 	});
 }else if(typeof module === 'undefined' || !('exports' in module)){
